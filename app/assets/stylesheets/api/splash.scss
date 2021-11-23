@@ -1,0 +1,36 @@
+.splash-page-main{
+  padding: 0;
+  margin-top: -20px;
+}
+
+.splash-header-hero{
+  height: 440px;
+  background-color: purple;
+  display: flex;
+  align-items: center;
+}
+
+.splash-header-signup{
+  width: 350px;
+  margin-left: 30px;
+}
+
+.splash-header-signup h1, .splash-header-signup p{
+  color: white;
+  font-family: sans-serif;
+}
+
+.splash-header-signup p{
+  margin-bottom: 35px;
+}
+
+.splash-header-button{
+  padding: 15px 45px;
+  background-color: white;
+  color: black;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: sans-serif;
+}

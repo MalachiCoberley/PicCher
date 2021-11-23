@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// -----MALACHIIIIIIII MAKE THIS REEFLECT THAT IT IS ACTUALLY YOUR NAV COMPONENT_-------
+
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <div className="nav-buttons">
@@ -10,8 +12,8 @@ const Greeting = ({ currentUser, logout }) => {
   );
   const personalGreeting = () => (
     <div>
-      <h2>Hi, {currentUser.username}!</h2>
-      <button onClick={logout}>Log Out</button>
+      <h4>{currentUser.username}!</h4>
+      <button onClick={logout} className="nav-login">Log Out</button>
     </div>
   );
 

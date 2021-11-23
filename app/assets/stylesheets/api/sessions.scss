@@ -3,11 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-  background-color: slategray;
+  background-color: lightgray;
 }
 
 .session-form-container {
-  height: 100vh;
+  height: 90vh;
   width: auto;
   display: flex;
   align-items: center;
@@ -21,6 +21,7 @@ body{
   background-color: white;
   height: 400px;
   width: 350px;
+  border-radius: 5px;
 }
 
 .session-form-header{
@@ -30,7 +31,7 @@ body{
 
 .submit-form-button {
   padding: 5px;
-  background-color: rebeccapurple;
+  background-color: seagreen;
   color: white;
   border-radius: 15px;
   width: 290px;
