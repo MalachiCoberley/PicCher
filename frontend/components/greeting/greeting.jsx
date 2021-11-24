@@ -11,9 +11,9 @@ const Greeting = ({ currentUser, logout }) => {
     </div>
   );
   const personalGreeting = () => (
-    <div>
-      <h4>{currentUser.username}!</h4>
-      <button onClick={logout} className="nav-login">Log Out</button>
+    <div className="nav-buttons">
+      <h4>{currentUser.username}</h4>
+      <a href="#" onClick={logout} className="nav-login">Log Out</a>
     </div>
   );
 
