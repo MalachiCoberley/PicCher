@@ -4,6 +4,7 @@
 
 body{
   background-color: lightgray;
+  font-family: sans-serif;
 }
 
 .session-form-container {
@@ -37,12 +38,27 @@ body{
   width: 290px;
   font-weight: bold;
 }
+
 .session-form label {
 width: 280px;
 margin: 5px auto;
 }
+
 .session-form input {
 width: 280px;
 margin: 5px auto;
 height: 35px;
+}
+
+.demo-form-button {
+  padding: 6px;
+  background-color: seagreen;
+  color: white;
+  border-radius: 15px;
+  width: 280px;
+  font-weight: bold;
+}
+
+.demo-form-button:hover, .submit-form-button:hover {
+  cursor: pointer;
 }

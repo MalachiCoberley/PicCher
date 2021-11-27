@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -9,6 +10,10 @@ class SessionForm extends React.Component {
       email: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoUser = {
+      username: 'CherDemo',
+      password: 'abc123'
+    }
   }
 
   update(field) {
@@ -61,6 +66,7 @@ class SessionForm extends React.Component {
             </label>
             <br/>
             <input className="submit-form-button" type="submit" value={this.props.formType} />
+            <button className="demo-form-button" onClick={(e) => {e.preventDefault; this.props.loginDemo(this.demoUser)}} >Demo Account</button>
         </form>
       </div>
     );
