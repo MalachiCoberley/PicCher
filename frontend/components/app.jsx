@@ -1,9 +1,11 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import GreetingContainer from "./greeting/greeting_container";
 import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_ container";
 import Splash from "./splash/splash";
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import HomePage from "./home"
 
 const App = () => (
   <div> 
@@ -11,11 +13,12 @@ const App = () => (
     <Link to="/"><h1>PicCher</h1></Link>
     <GreetingContainer/>
     </nav>
-    <Routes>
-      <Route path="/login" element={<LoginFormContainer/>} />
-      <Route path="/signup" element={<SignupFormContainer/>} />
-      <Route path="/" element={<Splash/>} />
-    </Routes>
+    <Switch>
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
+      <Route path="/welcome" component={Splash} />
+      <ProtectedRoute path="/" component={HomePage} />
+    </Switch>
   </div>
 );
 
