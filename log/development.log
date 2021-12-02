@@ -8855,3 +8855,278 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 270ms (Views: 3.1ms | ActiveRecord: 33.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2021-12-02 07:50:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RmR7HXNn9q+LQwT/qGaI1c225465LWFFW+8Ovf0cmxT874Cu38uFcy6dUc6OJpDiehCtiHbybUb8XxIUtc+B9Q=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 506ms (Views: 503.7ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2021-12-02 07:50:53 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RmR7HXNn9q+LQwT/qGaI1c225465LWFFW+8Ovf0cmxT874Cu38uFcy6dUc6OJpDiehCtiHbybUb8XxIUtc+B9Q=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "CherDemo"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "O6Z4T1ZNaXAOg2zGj3JN3AfIh7xXa2YjJS9mOGF9cj/ph7xVIMCjnnYz/DpRdzWFYwo406O4ign08B/nO+yXcg=="], ["id", 9], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "O6Z4T1ZNaXAOg2zGj3JN3AfIh7xXa2YjJS9mOGF9cj/ph7xVIMCjnnYz/DpRdzWFYwo406O4ign08B/nO+yXcg=="], ["updated_at", "2021-12-02 14:50:53.856997"], ["id", 9]]
+  ↳ app/models/user.rb:28
+  [1m[35m (34.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:28
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.6ms)
+Completed 200 OK in 50ms (Views: 3.4ms | ActiveRecord: 37.8ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2021-12-02 07:51:03 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"CherDemo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "CherDemo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "CherDemo"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["id", 9], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["updated_at", "2021-12-02 14:51:03.407614"], ["id", 9]]
+  ↳ app/models/user.rb:28
+  [1m[35m (25.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:28
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 259ms (Views: 2.8ms | ActiveRecord: 26.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 08:33:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 47ms (Views: 43.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 08:45:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 456ms (Views: 441.6ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 08:46:16 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 450ms (Views: 448.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 08:47:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 457ms (Views: 455.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 08:47:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 93ms (Views: 91.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 08:47:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 08:47:28 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 147ms (Views: 146.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 08:47:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (5.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 93ms (Views: 91.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 08:48:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 87ms (Views: 85.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 08:48:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (5.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 91ms (Views: 89.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 08:48:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 82ms (Views: 80.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 08:49:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 438ms (Views: 436.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 09:20:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 152ms (Views: 149.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 09:20:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 112ms (Views: 110.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 09:20:32 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 88ms (Views: 86.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 09:20:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 75ms (Views: 73.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 09:21:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (4.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 63ms (Views: 61.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/post" for 127.0.0.1 at 2021-12-02 10:37:23 -0700
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"fsdsd", "description"=>"fsdfsdf", "location"=>"sdfdsf", "date_taken"=>"2020-02-02", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fee161b9a70 @tempfile=#<Tempfile:/tmp/RackMultipart20211202-18453-11riz22.jpeg>, @original_filename="SurrealWatermill.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"SurrealWatermill.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "author_id"=>"9"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+[36m  S3 Storage (2866.3ms) [0m[32mUploaded file to key: VSrV6XXbATdVTi2NHhw7Cuu7 (checksum: erLGeQ+2V1ElV2MoAXbrsA==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/posts_controller.rb:15
+  [1m[36mActiveStorage::Blob Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "VSrV6XXbATdVTi2NHhw7Cuu7"], ["filename", "SurrealWatermill.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 517329], ["checksum", "erLGeQ+2V1ElV2MoAXbrsA=="], ["created_at", "2021-12-02 17:37:25.909986"]]
+  ↳ app/controllers/api/posts_controller.rb:15
+  [1m[35m (37.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/posts_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/posts_controller.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/posts_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/posts_controller.rb:17
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "location", "date_taken", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "fsdsd"], ["description", "fsdfsdf"], ["location", "sdfdsf"], ["date_taken", "2020-02-02"], ["created_at", "2021-12-02 17:37:25.954323"], ["updated_at", "2021-12-02 17:37:25.954323"], ["author_id", 9]]
+  ↳ app/controllers/api/posts_controller.rb:17
+  [1m[36mActiveStorage::Attachment Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Post"], ["record_id", 7], ["blob_id", 7], ["created_at", "2021-12-02 17:37:25.957383"]]
+  ↳ app/controllers/api/posts_controller.rb:17
+  [1m[36mPost Update (1.5ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2021-12-02 17:37:25.960262"], ["id", 7]]
+  ↳ app/controllers/api/posts_controller.rb:17
+  [1m[35m (32.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/posts_controller.rb:17
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 0586eea6-ff1f-41cc-bf13-8bf63b33a4ec) to Async(default) with arguments: #<GlobalID:0x00007fee161390a0 @uri=#<URI::GID gid://pic-cher/ActiveStorage::Blob/7>>
+  Rendering api/posts/show.json.jbuilder
+  Rendered api/posts/_post.json.jbuilder (7.0ms)
+  Rendered api/posts/show.json.jbuilder (9.0ms)
+Completed 500 Internal Server Error in 2977ms (ActiveRecord: 76.2ms)
+
+
+
+NoMethodError - undefined method `dateTaken' for #<Post:0x00007fee161ad0b8>
+Did you mean?  date_taken
+               date_taken?
+               date_taken=:
+  app/views/api/posts/_post.json.jbuilder:1:in `_app_views_api_posts__post_json_jbuilder___4036819743289495043_45180'
+  app/views/api/posts/show.json.jbuilder:1:in `_app_views_api_posts_show_json_jbuilder__2322477126998516633_45140'
+  app/controllers/api/posts_controller.rb:18:in `create'
+
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/malachicoberley/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0586eea6-ff1f-41cc-bf13-8bf63b33a4ec] Performing ActiveStorage::AnalyzeJob (Job ID: 0586eea6-ff1f-41cc-bf13-8bf63b33a4ec) from Async(default) with arguments: #<GlobalID:0x00007fee156e2c28 @uri=#<URI::GID gid://pic-cher/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0586eea6-ff1f-41cc-bf13-8bf63b33a4ec] [36m  S3 Storage (243.1ms) [0m[34mDownloaded file from key: VSrV6XXbATdVTi2NHhw7Cuu7[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0586eea6-ff1f-41cc-bf13-8bf63b33a4ec] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0586eea6-ff1f-41cc-bf13-8bf63b33a4ec]   [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0586eea6-ff1f-41cc-bf13-8bf63b33a4ec]   ↳ /home/malachicoberley/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0586eea6-ff1f-41cc-bf13-8bf63b33a4ec]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 7]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0586eea6-ff1f-41cc-bf13-8bf63b33a4ec]   ↳ /home/malachicoberley/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0586eea6-ff1f-41cc-bf13-8bf63b33a4ec]   [1m[35m (31.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0586eea6-ff1f-41cc-bf13-8bf63b33a4ec]   ↳ /home/malachicoberley/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0586eea6-ff1f-41cc-bf13-8bf63b33a4ec] Performed ActiveStorage::AnalyzeJob (Job ID: 0586eea6-ff1f-41cc-bf13-8bf63b33a4ec) from Async(default) in 299.69ms

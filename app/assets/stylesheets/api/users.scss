@@ -17,6 +17,17 @@
   background-color: white;
 }
 
+.left-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left-nav p {
+  margin-left: 15px;
+  padding-top: 2px;
+}
+
 .main-nav a{
   text-decoration: none;
   color: black;

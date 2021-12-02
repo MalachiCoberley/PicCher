@@ -11,7 +11,14 @@ import HomePage from "./home"
 const App = () => (
   <div> 
     <nav className="main-nav">
-    <Link to="/"><h1>PicCher</h1></Link>
+      <div className="left-nav">
+        <Link to="/"><h1>PicCher</h1></Link>
+        <p>Discover</p>
+        <p>Licensing</p>
+        <p>Resources</p>
+        <p>Memberships</p>
+        <p>Quests</p>
+     </div>
     <GreetingContainer/>
     </nav>
     <Switch>
