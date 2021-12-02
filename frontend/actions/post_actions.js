@@ -20,7 +20,7 @@ const removePost = postId => ({
 });
 
 
-export const fetchPosts = posts => dispatch => (
+export const fetchPosts = () => dispatch => (
   PostApiUtil.fetchPosts()
   .then(posts => dispatch(receivePosts(posts)))
 )

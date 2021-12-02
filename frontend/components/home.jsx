@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HomePage = () => (
   <div>
@@ -6,8 +7,9 @@ const HomePage = () => (
     <p>See photos and published Galleries from people you follow.</p>
     <div>This is a container for users that you can follow.</div>
     <div>This is the picture index</div>
-    <button>Post a Picture</button>
+    <Link to="/post/new">Upload a new Picture</Link>
   </div>
 );
 
 export default HomePage
+

@@ -14,7 +14,7 @@ const Greeting = ({ currentUser, logout }) => {
     <div className="nav-buttons">
       <h4>{currentUser.username}</h4>
       <Link to="#" onClick={logout} className="nav-login">Log Out</Link>
-      <Link to="#" onClick={logout} className="nav-signup">Upload</Link>
+      <Link to="/post/new" className="nav-signup">{`\u21d1`} Upload</Link>
     </div>
   );
 

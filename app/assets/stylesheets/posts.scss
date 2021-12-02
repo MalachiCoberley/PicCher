@@ -1,0 +1,64 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-header {
+  background-color: white;
+  margin-top: 0;
+  padding: 5px 0 5px 40px;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: row;
+  margin: 0 40px;
+}
+
+.photo-upload {
+  width: 80vw;
+}
+
+.photo-details-pane {
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 80vh;
+  padding: 15px;
+}
+
+.photo-details-pane label {
+  color: rgb(118, 118, 118);
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+.photo-form-input {
+  width: 190px;
+  border-radius: 5px;
+  border: 1px solid rgb(118, 118, 118);
+}
+
+.photo-form-button {
+  width: 190px;
+  color: white;
+  border: seagreen 2px solid;
+  background-color: seagreen;
+  border-radius: 15px;
+  padding: 6px;
+  font-weight: bold;
+}
+
+.photo-preview-container {
+  background-color: lightgray;
+  width: 75vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-preview {
+  background-color: lightgray;
+  height: 80vh;
+  
+}
