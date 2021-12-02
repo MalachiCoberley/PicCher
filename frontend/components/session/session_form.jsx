@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -29,9 +28,10 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+    const err = Object.values(this.props.errors)
     return(
       <ul>
-        {this.props.errors.map((error, i) => (
+         {err.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
