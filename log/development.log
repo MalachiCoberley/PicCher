@@ -9130,3 +9130,54 @@ Did you mean?  date_taken
 [ActiveJob] [ActiveStorage::AnalyzeJob] [0586eea6-ff1f-41cc-bf13-8bf63b33a4ec]   [1m[35m (31.6ms)[0m  [1m[35mCOMMIT[0m
 [ActiveJob] [ActiveStorage::AnalyzeJob] [0586eea6-ff1f-41cc-bf13-8bf63b33a4ec]   ↳ /home/malachicoberley/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
 [ActiveJob] [ActiveStorage::AnalyzeJob] [0586eea6-ff1f-41cc-bf13-8bf63b33a4ec] Performed ActiveStorage::AnalyzeJob (Job ID: 0586eea6-ff1f-41cc-bf13-8bf63b33a4ec) from Async(default) in 299.69ms
+Started GET "/" for 127.0.0.1 at 2021-12-02 10:54:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 470ms (Views: 468.2ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2021-12-02 10:54:37 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FJqAAjnSFjRnjfvtuxHM2th9XuJE6e/+gIGKjfKWqpVSJcwLXiEYdjUnVnom+n3QdlDntHTmnXJMNfMI3EKzBA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "CherDemo"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "2kMPKTaaHyvs0z7SV7xCNMTYsWBn9+kYRMzsu1a1uJPCoLYez8f8Ufszhcvxvz0qz2sWjG7aXS8xcXDZTl/Pvg=="], ["id", 9], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "2kMPKTaaHyvs0z7SV7xCNMTYsWBn9+kYRMzsu1a1uJPCoLYez8f8Ufszhcvxvz0qz2sWjG7aXS8xcXDZTl/Pvg=="], ["updated_at", "2021-12-02 17:54:37.689813"], ["id", 9]]
+  ↳ app/models/user.rb:28
+  [1m[35m (69.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:28
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 92ms (Views: 3.7ms | ActiveRecord: 73.2ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2021-12-02 10:54:39 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"CherDemo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "CherDemo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "CherDemo"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "eoHoUKR1AUqicEYKn0QC66jFtUkGe9zMxES8JVdFM1c5+9sJvgIxsVMHv3oBNb9WPoO6FxbfxIrvD4PkPh1E3w=="], ["id", 9], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "eoHoUKR1AUqicEYKn0QC66jFtUkGe9zMxES8JVdFM1c5+9sJvgIxsVMHv3oBNb9WPoO6FxbfxIrvD4PkPh1E3w=="], ["updated_at", "2021-12-02 17:54:39.909538"], ["id", 9]]
+  ↳ app/models/user.rb:28
+  [1m[35m (78.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:28
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 322ms (Views: 3.2ms | ActiveRecord: 81.4ms)
+
+
