@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class PostForm extends React.Component {
       contentType: false,
       processData: false
     })
+
   }
 
   handleFile(e) {
