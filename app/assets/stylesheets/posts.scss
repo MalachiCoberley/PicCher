@@ -15,7 +15,7 @@
 }
 
 .photo-upload {
-  width: 80vw;
+  width: 75vw;
 }
 
 .photo-details-pane {
@@ -24,7 +24,8 @@
   flex-direction: column;
   background-color: white;
   height: 80vh;
-  padding: 15px;
+  align-items: center;
+  justify-content: left;
 }
 
 .photo-details-pane label {
@@ -49,8 +50,18 @@
   font-weight: bold;
 }
 
+.photo-form-button:hover {
+  width: 190px;
+  color: seagreen;
+  border: seagreen 2px solid;
+  background-color: white;
+  border-radius: 15px;
+  padding: 6px;
+  font-weight: bold;
+}
+
 .photo-preview-container {
-  background-color: lightgray;
+  background-color: rgb(240, 240, 240);
   width: 75vw;
   height: 80vh;
   display: flex;
@@ -58,7 +69,10 @@
 }
 
 .photo-preview {
-  background-color: lightgray;
-  height: 80vh;
+  margin-top: 15px;
+  background-color: rgb(240, 240, 240);
+  height: 65vh;
+  max-height: 80vh;
+  max-width: 75vw;
   
 }

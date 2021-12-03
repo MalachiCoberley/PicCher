@@ -55,8 +55,18 @@
   border-radius: 15px;
 }
 
+.nav-signup:hover {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-family: sans-serif;  
+  border: 1px inset rgb(43, 46, 46);
+  border-radius: 15px;
+  background-color: black;
+}
+
 .search-bar {
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(240, 240, 240);
   border: 0;
   border-radius: 10px;
   width: fit-content;
@@ -65,7 +75,7 @@
 
 .search-bar input {
   border: 0;
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(240, 240, 240);
   margin-left: 5px;
   margin-right: 5px;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -23,8 +24,7 @@ class PostForm extends React.Component {
       data: formData,
       contentType: false,
       processData: false
-    })
-
+    }).then(window.location.reload());
   }
 
   handleFile(e) {
@@ -37,6 +37,11 @@ class PostForm extends React.Component {
     if (file) {
       fileReader.readAsDataURL(file);
     }
+  }
+
+  submissionComplete() {
+     const history = useHistory();
+     history.push('/');
   }
 
   update(field) {
