@@ -1,0 +1,12 @@
+.photo-index {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 93vw;
+}
+
+.photo-index-item {
+  width: 500px;
+  max-height: 400px;
+}

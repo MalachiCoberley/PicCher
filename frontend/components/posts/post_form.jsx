@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -47,7 +46,7 @@ class PostForm extends React.Component {
   render() {
     return (
       <div>
-        <h2 className="form-header">Upload</h2>
+        <h2 className="page-header">Upload</h2>
         <form onSubmit={this.handleSubmit} className="upload-form">
           <div className="photo-upload">
           <input type="file" onChange={this.handleFile.bind(this)}/>

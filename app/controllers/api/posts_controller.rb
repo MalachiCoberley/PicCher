@@ -15,7 +15,7 @@ class Api::PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      render :show
+      render json: "great success"
     else
       render json: @post.errors.full_messages, status: :unprocessable_entity
     end

@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PostIndexContainer from "./posts/post_index_container"
 
 const HomePage = () => (
-  <div>
-    <h2>Home Feed</h2>
+  <div className="home-container-main">
+    <h2 className="page-header">Home Feed</h2>
     <p>See photos and published Galleries from people you follow.</p>
-    <div>This is a container for users that you can follow.</div>
-    <div>This is the picture index</div>
+    <div className="users-to-follow">This is a container for users that you can follow.</div>
+    <PostIndexContainer/>
     <Link to="/post/new">Upload a new Picture</Link>
   </div>
 );
