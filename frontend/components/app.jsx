@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
-import GreetingContainer from "./greeting/greeting_container";
+import NavContainer from "./nav/nav_container";
 import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_ container";
 import CreatePostFormContainer from "../components/posts/create_post_form_container"
@@ -19,7 +19,7 @@ const App = () => (
         <p>Memberships</p>
         <p>Quests</p>
      </div>
-    <GreetingContainer/>
+    <NavContainer/>
     </nav>
     <Switch>
       <ProtectedRoute path="/post/new" component={CreatePostFormContainer} />

@@ -1,30 +1,31 @@
-.splash-page-main{
+.splash-page-main {
   padding: 0;
   margin-top: -20px;
 }
 
-.splash-header-hero{
+.splash-header-hero {
   height: 440px;
   background-color: purple;
   display: flex;
   align-items: center;
 }
 
-.splash-header-signup{
+.splash-header-signup {
   width: 350px;
   margin-left: 10vw;
+  
+  h1, p {
+    color: white;
+    font-family: sans-serif;
+  }
+
+  p {
+    margin-bottom: 35px;
+  }
+  
 }
 
-.splash-header-signup h1, .splash-header-signup p{
-  color: white;
-  font-family: sans-serif;
-}
-
-.splash-header-signup p{
-  margin-bottom: 35px;
-}
-
-.splash-header-button{
+.splash-header-button {
   padding: 15px 45px;
   background-color: white;
   color: black;
@@ -33,4 +34,24 @@
   text-decoration: none;
   font-size: 18px;
   font-family: sans-serif;
+}
+
+.splash-different-section {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  margin: 20px 3vw;
+
+  .splash-selling-point-container {
+    display: flex;
+    flex-direction: row;
+
+    .splash-selling-point {
+      max-width: 300px;
+      padding: 0 8px;
+    }
+
+  }
+
 }
