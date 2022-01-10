@@ -39,8 +39,18 @@ class Splash extends React.Component {
             <div className='splash-selling-point'>
               <h1>♣</h1>
               <h3>Sell your work</h3>
-              <p>Earn one of the highest royalty rates in the industry when you distribute your photography through 500px to a global marketplace, where buyers can view and purchase your work for commercial usage.</p>
+              <p>Earn one of the highest royalty rates in the industry when you distribute your photography through PicCher to a global marketplace, where buyers can view and purchase your work for commercial usage.</p>
             </div>
+          </div>
+        </div>
+
+        <div className='splash-app-section'>
+          <div className='splash-app-get'>
+            <h2>Get the app</h2>
+            <p>Join a community of over 16 million like-minded photographers. Download the PicCher app for Android and iOS today!</p>
+          </div>
+          <div className='splash-app-pics'>
+
           </div>
         </div>
         

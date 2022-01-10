@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PostIndexItem = props => (
   <div className="photo-index-item-container">
-    <img src={props.photoUrl} className="photo-index-item"/>
+    <Link to={`/post/${props.post.id}`} state={{entities: {posts: props.post}}}>
+      <img src={props.photoUrl} className="photo-index-item"/>
+    </Link>
   </div>
 );
 

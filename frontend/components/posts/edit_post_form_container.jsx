@@ -6,24 +6,26 @@ import { fetchPost, editPost } from '../../actions/post_actions';
 class EditPostForm extends React.Component {
   componentDidMount() {
     this.props.fetchPost(this.props.match.params.postId);
+    console.log(this.state)
   }
 
   render() {
-    const { action, formType, post } = this.props;
+    // const { action, formType, post } = this.props;
 
     // if (!post) return null;
     return (
-      <PostForm
-        action={action}
-        formType={formType}
-        post={post} />
+      // <PostForm
+      //   action={action}
+      //   formType={formType}
+      //   post={post} />
+      <div></div>
     );
   }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  post: state.posts[ownProps.match.params.postId],
-  formType: 'Update Post'
+    posts: state.entities,
+    formType: 'Update Post'
 });
 
 const mapDispatchToProps = dispatch => ({
