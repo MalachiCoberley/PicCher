@@ -24,7 +24,7 @@ const App = () => (
     </nav>
     <Switch>
       <ProtectedRoute path="/post/new" component={CreatePostFormContainer} />
-      <ProtectedRoute path="/post/:postId" component={EditPostFormContainer} />
+      <ProtectedRoute path="/post/edit/:postId" component={EditPostFormContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <Route path="/welcome" component={Splash} />
