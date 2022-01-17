@@ -4,6 +4,7 @@ import NavContainer from "./nav/nav_container";
 import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_ container";
 import CreatePostFormContainer from "../components/posts/create_post_form_container";
+import ShowPostContainer from "../components/posts/show_post_container";
 import EditPostFormContainer from "../components/posts/edit_post_form_container";
 import Splash from "./splash/splash";
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -25,6 +26,7 @@ const App = () => (
     <Switch>
       <ProtectedRoute path="/post/new" component={CreatePostFormContainer} />
       <ProtectedRoute path="/post/edit/:postId" component={EditPostFormContainer} />
+      <ProtectedRoute path="/post/:postId" component={ShowPostContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <Route path="/welcome" component={Splash} />

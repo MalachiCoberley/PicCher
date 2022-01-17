@@ -1,0 +1,50 @@
+.show-photo-display-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 600px;
+  background-color: rgb(51, 51, 51);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.show-photo-picture {
+  height: inherit;
+  max-height:  90%;
+}
+
+.show-photo-details {
+  padding: 25px 3vw; 
+}
+
+.edit-delete-buttons {
+  margin-bottom: 10px;
+}
+
+.show-author-information {
+  display: flex;
+  flex-direction: row;
+}
+
+.show-author-picture {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  background-color: gray;
+  text-align: center;
+}
+
+.show-title-follow h3 {
+  margin: 5px;
+}
+
+.show-author-name-follow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  p {
+    margin: 5px;
+  }
+}
