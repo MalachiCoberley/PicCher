@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ShowPost extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class ShowPost extends React.Component {
 
   render() {
     console.log(this.state)
-    console.log(this.state)
+    console.log(this.props)
     return (
       <div className='show-post-container'>
         <div className='show-photo-display-container'>
@@ -16,8 +17,8 @@ class ShowPost extends React.Component {
         </div>
         <div className='show-photo-details'>
           <div className='edit-delete-buttons'>
-            <button>Edit Photo</button>
-            <button>Delete Photo</button>
+            <Link to={`/post/edit/${this.state.id}`}>Edit Post</Link>
+            <button onClick={() => this.props.deletePost(this.state.id)}>Delete Photo</button>
           </div>
           <div className='show-author-information'>
             <div className='show-author-picture'>A</div>

@@ -22,7 +22,7 @@ const Navbar = ({ currentUser, logout }) => {
         </svg>
       <input type="text" placeholder="cosmetic search bar"/>
       </div>
-      <h4>{currentUser.username}</h4>
+      <Link to={`/user/${currentUser.id}`}>{currentUser.username}</Link>
       <Link to="#" onClick={logout} className="nav-login">Log Out</Link>
       <Link to="/post/new" className="nav-signup">{`\u21d1`} Upload</Link>
     </div>

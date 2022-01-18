@@ -1,0 +1,35 @@
+.profile-container {
+  padding: 10px 3vw;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .profile-total-stats {
+    display: flex;
+    flex-direction: row;
+
+    p {
+      margin-right: 15px;
+    }
+
+  }
+
+  .profile-links-collection {
+    display: flex;
+    flex-direction: row;
+
+    p {
+      margin-right: 15px;
+    }
+  }
+
+}
