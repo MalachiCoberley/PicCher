@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PostIndexItem from '../posts/post_index_item';
+import EditUserInfoForm from './edit_user_info_form';
 
 class Profile extends React.Component  {
   constructor(props) {
@@ -10,14 +11,11 @@ class Profile extends React.Component  {
 
   componentDidMount() {
     this.props.fetchPosts()
-    console.log(this.props)
   }
 
   render() {
       let allPhotos = Object.values(this.props.entities.posts)
       let userPhotos = allPhotos.filter(photo => photo.author_id === this.state.entities.user.id)
-
-      console.log(userPhotos)
 
     return (
       <div className="profile-container">
@@ -38,6 +36,7 @@ class Profile extends React.Component  {
             <p>Resume</p>
           </div>
         </div>
+        <EditUserInfoForm user={this.state.entities.user} editUser={this.props.editUser}/>
         <div className='profile-photo-index'>
         {
             userPhotos.map(post => (
