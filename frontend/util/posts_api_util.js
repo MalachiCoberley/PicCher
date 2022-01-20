@@ -8,7 +8,7 @@ export const fetchPosts = (posts) => (
 export const fetchPost = id => (
   $.ajax({
     method: "GET",
-    url: `api/post/${id}`,
+    url: `/api/post/${id}`,
     post
   })
 )
@@ -16,7 +16,7 @@ export const fetchPost = id => (
 export const createPost = post => (
   $.ajax({
     method: "POST",
-    url: `api/post/`,
+    url: `/api/post/`,
     post
   })
 )
@@ -24,7 +24,7 @@ export const createPost = post => (
 export const editPost = post => (
   $.ajax({
     method: "PATCH",
-    url: `api/post/${post.id}`,
+    url: `/api/post/${post.id}`,
     post
   })
 )
@@ -32,6 +32,6 @@ export const editPost = post => (
 export const deletePost = id => (
   $.ajax({
     method: "DELETE",
-    url: `api/post/${id}`,
+    url: `/api/posts/${id}`,
   })
 )
