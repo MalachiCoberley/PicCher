@@ -16,12 +16,12 @@ class Profile extends React.Component  {
   render() {
       let allPhotos = Object.values(this.props.entities.posts)
       let userPhotos = allPhotos.filter(photo => photo.author_id === this.state.entities.user.id)
+      let currentUser = this.props.session.id == this.props.match.params.userId
 
     return (
       <div className="profile-container">
         <div className='profile-header'>
-          <img src='https://upload.wikimedia.org/wikipedia/commons/0/04/Goethe%E2%80%99s_silhouette.jpg' alt={`${this.state.entities.user.username}'s profile picture`} className="profile-header-profile-picture"></img>
-          <h2>{this.state.entities.user.username}</h2>
+          <img src='https://pacdn.500px.org/userpic.png'/>
           <div className='profile-total-stats'>
             <p>COUNT OF FOLLOWERS</p>
             <p>84 Photo Likes</p>
@@ -36,7 +36,10 @@ class Profile extends React.Component  {
             <p>Resume</p>
           </div>
         </div>
-        <EditUserInfoForm user={this.state.entities.user} editUser={this.props.editUser}/>
+        { currentUser ? <EditUserInfoForm user={this.state.entities.user} editUser={this.props.editUser}/> : <></>}
+        {console.log(this.props)}
+        {console.log(this.state)}
+
         <div className='profile-photo-index'>
         {
             userPhotos.map(post => (
