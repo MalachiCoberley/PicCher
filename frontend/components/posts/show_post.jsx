@@ -8,8 +8,6 @@ class ShowPost extends React.Component {
   }
 
   render() {
-    console.log(this.state)
-    console.log(this.props)
     return (
       <div className='show-post-container'>
         <div className='show-photo-display-container'>
@@ -21,7 +19,7 @@ class ShowPost extends React.Component {
             <button onClick={() => this.props.deletePost(this.state.id)}>Delete Photo</button>
           </div>
           <div className='show-author-information'>
-            <div className='show-author-picture'>A</div>
+            <div className='show-author-picture'><Link to={`/user/${this.state.author_id}`}>A</Link></div>
             <div className='show-title-follow'>
               <h3>{this.state.title}</h3>
               <div className='show-author-name-follow'>

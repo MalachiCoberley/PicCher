@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_UPDATED_USER } from '../actions/user_actions';
+import { RECEIVE_UPDATED_USER, RECEIVE_SELECTED_USER } from '../actions/user_actions';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -8,6 +8,8 @@ const usersReducer = (state = {}, action) => {
       return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
     case RECEIVE_UPDATED_USER:
       return Object.assign({}, state, { [action.currentUser.id]: action.updatedUser });
+    case RECEIVE_SELECTED_USER:
+      return Object.assign({}, state, { [action.user.id]: action.user });
     default:
       return state;
   }

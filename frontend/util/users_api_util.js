@@ -5,3 +5,10 @@ export const editUser = user => (
     data: {user}
   })
 )
+
+export const getUser = userId => (
+  $.ajax({
+    method: "GET",
+    url: `api/user/${userId}`
+  })
+)
