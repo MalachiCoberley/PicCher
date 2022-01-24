@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 import { fetchPosts, deletePost } from '../../actions/post_actions';
 import { editUser, getUser } from '../../actions/user_actions';
-import { createFollow } from '../../actions/follow_actions';
+import { createFollow, getFollows } from '../../actions/follow_actions';
 
 
 const mapStateToProps = (state, ownProps) => ({
@@ -18,7 +18,8 @@ const mapDispatchToProps = dispatch => ({
   deletePost: postId => dispatch(deletePost(postId)),
   editUser: user => dispatch(editUser(user)),
   getUser: userId => dispatch(getUser(userId)),
-  createFollow: follow => dispatch(createFollow(follow))
+  createFollow: follow => dispatch(createFollow(follow)),
+  getFollows: userId => dispatch(getFollows(userId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

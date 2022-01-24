@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class PostForm extends React.Component {
     this.state = this.props.post;
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.submittedForm = <></>
   }
 
   handleSubmit(e) {
@@ -24,7 +26,8 @@ class PostForm extends React.Component {
       data: formData,
       contentType: false,
       processData: false
-    }).then(window.location.reload());
+    });
+    this.submittedForm = <Redirect to="/"/>
   }
 
   handleFile(e) {
@@ -51,6 +54,7 @@ class PostForm extends React.Component {
   render() {
     return (
       <div>
+        {this.submittedForm}
         <h2 className="page-header">Upload</h2>
         <form onSubmit={this.handleSubmit} className="upload-form">
           <div className="photo-upload">

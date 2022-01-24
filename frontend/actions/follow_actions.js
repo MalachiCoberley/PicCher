@@ -19,15 +19,16 @@ const removeFollow = followId => ({
   followId
 });
 
-export const getFollows = () => dispatch => (
-  FollowsUtil.getFollows()
+export const getFollows = userId => dispatch => (
+  FollowsUtil.getFollows(userId)
   .then(follows => dispatch(receiveFollows(follows)))
 )
 
-export const createFollow = follow => dispatch => (
+export const createFollow = (follow) => dispatch => {
+  return (
   FollowsUtil.followUser(follow)
   .then(follow => dispatch(receiveFollow(follow)))
-)
+)}
 
 export const deleteFollow = followId => dispatch => (
   FollowsUtil.unfollowUser(followId)

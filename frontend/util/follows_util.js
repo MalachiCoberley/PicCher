@@ -1,7 +1,8 @@
-export const getFollows = () => (
+export const getFollows = userId => (
   $.ajax({
     method: "GET",
-    url: "follows",
+    url: `api/user/${userId}/follows`,
+    data: {userId}
   })
 )
 
@@ -12,10 +13,11 @@ export const unfollowUser = followId => (
   })
 )
 
-export const followUser = follow => (
+export const followUser = (follow) => {
+  return (
   $.ajax({
     method: "POST",
     url: `follows`,
     data: {follow}
   })
-)
+)}

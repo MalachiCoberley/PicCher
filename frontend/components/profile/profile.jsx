@@ -10,16 +10,33 @@ class Profile extends React.Component  {
       loading: true
     }
 
+    this.followUser = this.followUser.bind(this);
+    this.showEditForm = this.showEditForm.bind(this)
+  }
+
+  followUser(e) {
+    let follow = {
+      user_id: this.props.match.params.userId,
+      follower: this.props.session.id
+    }
+    this.props.createFollow(follow)
   }
 
   componentDidMount() {
     this.props.fetchPosts()
     this.props.getUser(this.props.match.params.userId).then(() => this.setState({loading: false}))
+    this.props.getFollows(this.props.match.params.userId)
 
   }
 
   showEditForm(currentUser) {
-    <EditUserInfoForm user={this.props.entities.user} editUser={this.props.editUser}/>
+
+    return (
+      <div>
+        <button>Edit Profile</button>
+        <EditUserInfoForm className="hidden" user={this.props.entities.user} editUser={this.props.editUser}/>
+      </div>
+    )
   }
 
   render() {
@@ -52,8 +69,14 @@ class Profile extends React.Component  {
           <div className=''>
     
           </div>
-          { currentUser ? <button>Edit Profile</button> : <button>Follow</button>}
-    
+          { 
+            currentUser ? 
+            <div>
+              <button>Edit Profile</button>
+              <EditUserInfoForm className="hidden" user={this.props.entities.user} editUser={this.props.editUser}/>
+            </div> : 
+            <button onClick={e => this.followUser(e)}>Follow</button>
+         }
           <div className='profile-photo-index'>
           {
               userPhotos.map(post => (
