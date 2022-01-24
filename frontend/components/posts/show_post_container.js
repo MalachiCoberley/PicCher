@@ -6,8 +6,11 @@ import { getUser } from '../../actions/user_actions';
 
 
 const mapStateToProps = (state, ownProps) => ({
-  post: state.entities.posts[ownProps.match.params.postId],
-  loading: true,
+  entities: {
+    user: state.entities.users,
+    posts: state.entities.posts[ownProps.match.params.postId],
+    follows: state.entities.follows
+  },
   session: state.session
 });
 

@@ -11,7 +11,7 @@ class FollowsController < ApplicationController
   end
 
   def index
-    @follows = Follow.find_by(user_id: params[:userId])
+    @follows = Follow.where(user_id: params[:userId])
     render json: @follows
   end
 
