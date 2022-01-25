@@ -2,11 +2,17 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 93vw;
 }
 
+.photo-index-item-container {
+  margin: 5px;
+}
+
 .photo-index-item {
-  width: 500px;
-  max-height: 400px;
+  object-fit: cover;
+  width: 400px;
+  height: 400px;
+  background-color: white;
 }

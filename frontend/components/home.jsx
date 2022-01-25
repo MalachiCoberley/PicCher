@@ -9,7 +9,9 @@ const HomePage = () => (
     <p>See photos and published Galleries from people you follow.</p>
     </div>
     {/* <div className="users-to-follow">This is a container for users that you can follow.</div> */}
-    <PostIndexContainer/>
+    <div className="home-photo-index">
+      <PostIndexContainer/>
+    </div>
   </div>
 );
 

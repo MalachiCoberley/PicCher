@@ -62,11 +62,18 @@ class Profile extends React.Component  {
       let followingUser = currentUser || this.following(this.props.entities.follows, this.props.session.id)
       let followCount = Object.keys(this.props.entities.follows).length
       let showEdit = false
+      let displayFollowing = currentUser ? "" : "Following"
 
       return (
         <div className="profile-container">
           <div className='profile-header'>
             <img src='https://pacdn.500px.org/userpic.png'/>
+            {
+              followingUser ?
+              <p className='profile-following-text'>{displayFollowing}</p> :
+              <button onClick={e => this.followUser(e)} className='profile-follow-button'>Follow</button>
+            }
+            <h2>{this.props.entities.user.username}</h2>
             <div className='profile-total-stats'>
               <p>{followCount} Followers</p>
               <p>{Math.floor(Math.random() * 1000)} Photo Likes</p>
@@ -78,13 +85,8 @@ class Profile extends React.Component  {
                 <EditUserInfoForm display={showEdit} user={this.props.entities.user} editUser={this.props.editUser}/>
               </div> : <></>
             }
-          {
-           followingUser ?
-           <p className='profile-following-text'>Following</p> :
-           <button onClick={e => this.followUser(e)}>Follow</button>
-          }
             <div className='profile-links-collection'>
-              <p>Photos</p>
+              <p className='profile-active-link'>Photos</p>
               <p>Galleries</p>
               <p>Groups</p>
               <p>Licensing</p>

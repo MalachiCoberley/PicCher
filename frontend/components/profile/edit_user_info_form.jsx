@@ -33,10 +33,10 @@ class EditUserInfoForm extends React.Component {
     return (
       <div className="edit-user-info-form-container">
         <button onClick={e => this.handleClick(e)} id='edit-info-button'>Edit Profile</button>
-        <form className="hidden" id="edit-info-form">
-          <p>Email: {this.state.email}</p>
+        <form className="hidden edit-info-form" id="edit-info-form">
+          <p>Email: <span className='filler-email'></span>{this.state.email}</p>
           <label>
-            About: 
+            About: <span className='filler-about'></span>
             <textarea 
               value={this.state.about} 
               placeholder='Tell us about yourself'
@@ -44,7 +44,7 @@ class EditUserInfoForm extends React.Component {
             />
           </label>
           <label>
-            City 
+            City: <span className='filler-city'></span>
             <input 
               type='text'
               value={this.state.city}  
@@ -53,7 +53,7 @@ class EditUserInfoForm extends React.Component {
             />
           </label>
           <label>
-            Country 
+            Country: 
             <input 
               type='text'
               value={this.state.country} 
