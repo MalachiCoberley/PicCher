@@ -8,7 +8,8 @@ import { createFollow, getFollows } from '../../actions/follow_actions';
 const mapStateToProps = (state, ownProps) => ({
   entities: {
     user: state.entities.users[ownProps.match.params.userId],
-    posts: state.entities.posts
+    posts: state.entities.posts,
+    follows: state.entities.follows
   },
   session: state.session
 });

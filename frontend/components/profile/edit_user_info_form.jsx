@@ -7,11 +7,22 @@ class EditUserInfoForm extends React.Component {
     this.state = this.props.user;
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.editUser(this.state)
+    let editForm = document.getElementById("edit-info-form");
+    let editButton = document.getElementById("edit-info-button");
+    editButton.classList.remove("hidden")
+    editForm.classList.add("hidden")
+  }
+
+  handleClick(e) {
+    let editForm = document.getElementById("edit-info-form");
+    editForm.classList.remove("hidden")
+    e.target.classList.add("hidden")
   }
 
   update(field) {
@@ -21,7 +32,8 @@ class EditUserInfoForm extends React.Component {
   render() {
     return (
       <div className="edit-user-info-form-container">
-        <form>
+        <button onClick={e => this.handleClick(e)} id='edit-info-button'>Edit Profile</button>
+        <form className="hidden" id="edit-info-form">
           <p>Email: {this.state.email}</p>
           <label>
             About: 
