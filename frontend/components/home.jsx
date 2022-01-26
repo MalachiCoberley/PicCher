@@ -6,7 +6,7 @@ const HomePage = () => (
   <div className="home-container-main">
     <div className="page-header">
     <h1>Home Feed</h1>
-    <p>See photos and published Galleries from people you follow.</p>
+    <p>See photos from other PicCher users.</p>
     </div>
     {/* <div className="users-to-follow">This is a container for users that you can follow.</div> */}
     <div className="home-photo-index">
