@@ -17,7 +17,7 @@ class PostForm extends React.Component {
     formData.append('post[title]', this.state.title);
     formData.append('post[description]', this.state.description);
     formData.append('post[location]', this.state.location);
-    formData.append('post[date_taken]', this.state.dateTaken);
+    formData.append('post[date_taken]', this.state.date_taken);
     formData.append('post[photo]', this.state.photoFile);
     formData.append('post[author_id]', this.props.session.session.id);
     $.ajax({
@@ -52,6 +52,7 @@ class PostForm extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>
         {this.submittedForm}
@@ -94,12 +95,12 @@ class PostForm extends React.Component {
               Date Taken <br/>
               <input
                 type='date'
-                value={this.state.dateTaken}
+                value={this.state.date_taken}
                 className="photo-form-input"
-                onChange={this.update('dateTaken')}
+                onChange={this.update('date_taken')}
               />
             </label>
-          <button type='submit' value={this.props.formType} className="photo-form-button">Upload</button>
+          <button type='submit' value={this.props.formType} className="photo-form-button">Submit</button>
           </div>
         </form>
       </div>
