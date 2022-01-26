@@ -3,7 +3,7 @@ import PostIndex from './post_index';
 import { fetchPosts, deletePost } from '../../actions/post_actions';
 
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
   posts: Object.values(state.entities.posts)
 });
 

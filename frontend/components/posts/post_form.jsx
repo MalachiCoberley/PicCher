@@ -8,7 +8,10 @@ class PostForm extends React.Component {
     this.state = this.props.post;
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.submittedForm = <></>
+  }
+
+  componentDidMount() {
+    this.setState({submitted: false})
   }
 
   handleSubmit(e) {
@@ -27,7 +30,7 @@ class PostForm extends React.Component {
       contentType: false,
       processData: false
     });
-    this.submittedForm = <Redirect to="/"/>
+    this.setState({submitted: true})
   }
 
   handleFile(e) {
@@ -52,10 +55,9 @@ class PostForm extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div>
-        {this.submittedForm}
+        {this.state.submitted ? <Redirect to="/"/> : <></>}
         <h2 className="page-header">Upload</h2>
         <form onSubmit={this.handleSubmit} className="upload-form">
           <div className="photo-upload">

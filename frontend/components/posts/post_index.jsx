@@ -6,8 +6,16 @@ class PostIndex extends React.Component {
     this.props.fetchPosts();
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.posts.length !== this.props.posts.length) {
+      // window.location.reload()
+    };
+  }
+
   render() {
     const { posts, deletePost } = this.props;
+    console.log(this.props)
+    console.log(this.state)
 
     return (
       <div className="photo-index">
