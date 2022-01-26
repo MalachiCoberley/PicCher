@@ -15,7 +15,6 @@ class Splash extends React.Component {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             <Link className="splash-header-button" to="/signup">Sign up</Link>
           </div>
-
         </div>
 
         <div className='splash-different-section'>
@@ -46,17 +45,28 @@ class Splash extends React.Component {
 
         <div className='splash-app-section'>
           <div className='splash-app-get'>
-            <h2>Get the app</h2>
-            <p>Join a community of over 16 million like-minded photographers. Download the PicCher app for Android and iOS today!</p>
+            <h1>Get the app</h1>
+            <p>Join a community of over 16 million like-minded photographers. Download the PicCher app for Android and iOS today! After you download it, delete it immediately! That was probably a virus. PicCher doesn't have an official app.</p>
+            <div className='splash-app-section-buttons'>
+              <button>App Store</button>
+              <button>Google Play</button>
+            </div>
           </div>
-          <div className='splash-app-pics'>
+        </div>
 
-          </div>
+        <div className="splash-mid-hero">
+          <h1>It's Simple</h1>
+        </div>
+
+        <div className='splash-simple'>
+          <h2>Upload - Feel Good - Repeat</h2>
+          <p>Leave behind the days of waiting for others to validate you and your existence. With our patented insta-response algorithms, we generate all of the likes, buzz, and comments that your art needs. Time to stop reading and start doing... Sign up!</p>
+          <Link className="splash-header-button" to="/signup">Sign up</Link>
         </div>
         
       </div>
     );
   }
 }
-
+4
 export default Splash;

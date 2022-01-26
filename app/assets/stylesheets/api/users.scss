@@ -55,13 +55,9 @@
 }
 
 .nav-signup:hover {
-  color: white;
-  text-decoration: none;
-  padding: 5px 10px;
-  font-family: sans-serif;  
+  color: black;
   border: 1px inset rgb(43, 46, 46);
-  border-radius: 15px;
-  background-color: black;
+  background-color: rgb(220, 220, 220);
 }
 
 .nav-upload {
@@ -75,10 +71,10 @@
 }
 
 .nav-upload:hover {
-  color: white; 
+  color: black;
   border: 2px inset rgb(43, 46, 46);
   border-radius: 15px;
-  background-color: black;
+  background-color: rgb(220, 220, 220);
 }
 
 .search-bar {

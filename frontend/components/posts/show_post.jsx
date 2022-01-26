@@ -8,7 +8,8 @@ class ShowPost extends React.Component {
     this.state = {
       loadingUsers: true,
       loadingFollows: true,
-      postDeleted: false
+      postDeleted: false,
+      newFollow: false
     }
 
     this.followUser = this.followUser.bind(this);
@@ -34,6 +35,7 @@ class ShowPost extends React.Component {
       follower: this.props.session.id
     }
     this.props.createFollow(follow)
+    this.setState({newFollow: true})
   }
 
   following(follows, currentUser) {
@@ -56,7 +58,7 @@ class ShowPost extends React.Component {
       let { follows, posts } = this.props.entities
       let { session } = this.props
       let currentUser = session.id == posts.author_id;
-      let followingUser = currentUser || this.following(follows, session.id)
+      let followingUser = currentUser || this.following(follows, session.id) || this.state.newFollow
       let photoDateArray = posts.date_taken.split("-")
 
       return (
