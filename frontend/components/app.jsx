@@ -10,25 +10,17 @@ import ProfileContainer from "./profile/profile_container";
 import Splash from "./splash/splash";
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HomePage from "./home"
+import SearchResultsContainer from "../components/search/search_results_container"
 
 const App = () => (
   <div> 
-    <nav className="main-nav">
-      <div className="left-nav">
-        <Link to="/"><h1>PicCher</h1></Link>
-        <p>Discover</p>
-        <p>Licensing</p>
-        <p>Resources</p>
-        <p>Memberships</p>
-        <p>Quests</p>
-     </div>
     <NavContainer/>
-    </nav>
     <Switch>
       <ProtectedRoute exact path="/post/new" component={CreatePostFormContainer} />
       <ProtectedRoute exact path="/post/edit/:postId" component={EditPostFormContainer} />
       <ProtectedRoute exact path="/user/:userId" component={ProfileContainer} />
       <ProtectedRoute exact path="/post/:postId" component={ShowPostContainer} />
+      <ProtectedRoute exact path="/search/:searchQuery" component={SearchResultsContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <Route path="/welcome" component={Splash} />

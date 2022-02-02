@@ -44,3 +44,8 @@ export const deletePost = id => dispatch => (
   PostApiUtil.deletePost(id)
     .then(() => dispatch(removePost(id)))
 )
+
+export const searchPosts =search => dispatch => (
+  PostApiUtil.searchPosts(search)
+  .then(posts => dispatch(receivePosts(posts)))
+)

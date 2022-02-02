@@ -12,7 +12,7 @@ class Api::PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.where("lower(title) LIKE ? OR lower(description) LIKE ?", "%#{params[:search].downcase}%", "%#{params[:search].downcase}%")
+    @posts = Post.where("lower(title) LIKE ? OR lower(description) LIKE ?", "%#{params[:search]&.downcase}%", "%#{params[:search]&.downcase}%")
     render :index
   end
 
