@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :posts, only: [:index, :show, :destroy, :update]
     resource :post, only: [:create]
+    get 'search', to: 'posts#search'
   end
 
   resources :follows, only: [:create, :destroy]
