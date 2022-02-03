@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
+import CommentsContainer from '../comments/comments_container';
 
 class ShowPost extends React.Component {
   constructor(props) {
@@ -108,6 +109,7 @@ class ShowPost extends React.Component {
                   </div>
                 </div>
             </div>
+            <CommentsContainer postId={this.props.match.params.postId} currentUser={this.props.session.id}/>
             {/* <div className='comment-section'>
               <div className='add-comment-section'>
                 <img src="https://pacdn.500px.org/userpic.png" alt='profile picture'/>
