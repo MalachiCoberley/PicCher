@@ -9,9 +9,9 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_many :fanships,
-  primary_key: :id,
-  foreign_key: :user_id,
-  class_name: :Follow
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Follow
 
   has_many :followships,
     primary_key: :id,
@@ -25,6 +25,11 @@ class User < ApplicationRecord
   has_many :followees,
     through: :followships,
     source: :followee
+
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Comment
 
 
   def self.find_by_credentials(username, password)

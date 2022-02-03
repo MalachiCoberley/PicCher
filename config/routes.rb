@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       resources :follows, only: [:index], controller: '/follows'
     end
     resource :session, only: [:create, :destroy]
-    resources :posts, only: [:index, :show, :destroy, :update]
+    resources :posts, only: [:index, :show, :destroy, :update] do
+      resources :comments, only: [:index, :create, :destroy]
+    end
     resource :post, only: [:create]
     get 'search', to: 'posts#search'
   end

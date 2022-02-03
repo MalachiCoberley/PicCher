@@ -108,7 +108,7 @@ class ShowPost extends React.Component {
                   </div>
                 </div>
             </div>
-            <div className='comment-section'>
+            {/* <div className='comment-section'>
               <div className='add-comment-section'>
                 <img src="https://pacdn.500px.org/userpic.png" alt='profile picture'/>
                 <input type="text" className='add-comment-input' placeholder="You can't add a comment"/>
@@ -142,7 +142,7 @@ class ShowPost extends React.Component {
                     <p>An emotive capture...long road indeed. Beautiful work as always.</p>
                   </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       );
