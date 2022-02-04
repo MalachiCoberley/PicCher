@@ -8,14 +8,14 @@ export const fetchComments = (postId) => (
 export const createComment = comment => (
   $.ajax({
     method: "POST",
-    url: `/api/post/`,
-    comment
+    url: `/api/posts/${comment.post_id}/comments`,
+    data: {comment}
   })
 )
 
 export const deleteComment = comment => (
   $.ajax({
     method: "DELETE",
-    url: `/api/posts/${comment.post_id}/comments/${comment.id}`,
+    url: `/api/posts/${comment.post_id}/comments/${comment.id}`
   })
 )

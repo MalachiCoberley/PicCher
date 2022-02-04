@@ -25,6 +25,7 @@ export const fetchComments = postId => dispatch => (
 )
 
 export const createComment = (comment) => dispatch => {
+  console.log
   return (
   CommentsApiUtil.createComment(comment)
   .then(comment => dispatch(receiveComment(comment)))

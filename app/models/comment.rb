@@ -8,6 +8,6 @@ class Comment < ApplicationRecord
   belongs_to :post,
     primary_key: :id,
     foreign_key: :post_id,
-    class_name: :Comment
+    class_name: :Post
 
 end

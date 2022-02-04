@@ -10,13 +10,14 @@ class Api::CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.where(post_id: params[:post_id])
-    render json: @comments
+    @comments = Comment.joins(:user).select("comments.*, users.username").where(post_id: params[:post_id])
+    render :index
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.delete
+    render json: @comment
   end
 
   private

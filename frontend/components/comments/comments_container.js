@@ -7,11 +7,11 @@ const mapStateToProps = (state, ownProps) => ({
     comments: state.entities.comments
   },
   postId: parseInt(ownProps.postId),
-  currentUser: ownProps.currentUser
+  currentUser: ownProps.currentUser,
+  currentUsername: ownProps.currentUsername
 });
 
 const mapDispatchToProps = dispatch => ({
-  getUser: userId => dispatch(getUser(userId)),
   fetchComments: postId => dispatch(fetchComments(postId)),
   createComment: comment => dispatch(createComment(comment)),
   deleteComment: comment => dispatch(deleteComment(comment))

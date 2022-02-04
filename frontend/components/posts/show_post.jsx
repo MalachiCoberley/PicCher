@@ -109,7 +109,7 @@ class ShowPost extends React.Component {
                   </div>
                 </div>
             </div>
-            <CommentsContainer postId={this.props.match.params.postId} currentUser={this.props.session.id}/>
+            <CommentsContainer postId={this.props.match.params.postId} currentUser={this.props.session.id} currentUsername={this.props.entities.user[this.props.session.id].username}/>
             {/* <div className='comment-section'>
               <div className='add-comment-section'>
                 <img src="https://pacdn.500px.org/userpic.png" alt='profile picture'/>
