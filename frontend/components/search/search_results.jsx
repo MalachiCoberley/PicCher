@@ -24,11 +24,18 @@ class SearchResults extends React.Component {
   render () {
     if (this.state.loading) {
       return <div></div>
-    } else if (Object.keys(this.props.entities.posts).length == 0) return <div>No Results :(</div>
+    } else if (Object.keys(this.props.entities.posts).length == 0) return (
+    <div className="home-container-main">
+      <div className="page-header">
+        <h1>Search Results for "{this.props.match.params.searchQuery}"</h1>
+        </div>
+        No Results :(
+    </div>
+    )
     else return (
       <div className="home-container-main">
         <div className="page-header">
-        <h1>Search Results</h1>
+        <h1>Search Results for "{this.props.match.params.searchQuery}"</h1>
         </div>
         <div className='profile-photo-index'>
         {
