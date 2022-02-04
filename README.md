@@ -12,10 +12,12 @@ PicCher utilizes React and Redux for the front end, with Rails and Postgresql on
 * View profiles and follow users
 * Upload your own photos
 * Edit profile and post details as needed
+* Search for pictures
+* Add comments to pictures
 
 ### What Hot New Features Are On The Horizon?
 I'm so glad you asked!
-* Comments
+* Collections
 * Curated Feeds and "Recommended Follows" 
 
 ### Who is Using PicCher?
