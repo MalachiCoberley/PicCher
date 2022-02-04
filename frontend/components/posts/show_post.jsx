@@ -10,9 +10,11 @@ class ShowPost extends React.Component {
       loadingUsers: true,
       loadingFollows: true,
       postDeleted: false,
-      newFollow: false
+      newFollow: false,
+      newFollowId: -1
     }
 
+    this.unfollowUser = this.unfollowUser.bind(this);
     this.followUser = this.followUser.bind(this);
     this.following = this.following.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -37,6 +39,12 @@ class ShowPost extends React.Component {
     }
     this.props.createFollow(follow)
     this.setState({newFollow: true})
+  }
+  
+  unfollowUser(e) {
+    this.setState({newFollow: false})
+    let follows = Object.values(this.props.entities.follows).filter(follow => follow.follower_id == this.props.session.id)
+    this.props.deleteFollow(follows[0].id)
   }
 
   following(follows, currentUser) {
@@ -89,9 +97,19 @@ class ShowPost extends React.Component {
                   <div className='show-author-name-follow'>
                   <p>by {this.props.entities.user[posts.author_id].username} • </p>
                   {
-                    followingUser ?
-                    <p>Following</p> :
-                    <button onClick={e => this.followUser(e)} className='show-follow-button'>Follow</button>
+                    currentUser 
+                    ?
+                    <></> 
+                    :
+                    <div>
+                      {
+                        followingUser 
+                        ?
+                        <button onClick={e => this.unfollowUser(e)} className='show-unfollow-button'>Unfollow</button>
+                        :
+                        <button onClick={e => this.followUser(e)} className='show-follow-button'>Follow</button>
+                      }
+                    </div>
                   }
                   </div>
                 </div>

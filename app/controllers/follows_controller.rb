@@ -12,7 +12,7 @@ class FollowsController < ApplicationController
 
   def index
     @follows = Follow.where(user_id: params[:userId])
-    render json: @follows
+    render :index
   end
 
 

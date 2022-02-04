@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ShowPost from './show_post';
 import { fetchPost, deletePost } from '../../actions/post_actions';
-import { createFollow, getFollows } from '../../actions/follow_actions';
+import { createFollow, deleteFollow, getFollows } from '../../actions/follow_actions';
 import { getUser } from '../../actions/user_actions';
 
 
@@ -19,7 +19,8 @@ fetchPost: postId => dispatch(fetchPost(postId)),
 deletePost: postId => dispatch(deletePost(postId)),
 getUser: userId => dispatch(getUser(userId)),
 createFollow: follow => dispatch(createFollow(follow)),
-getFollows: userId => dispatch(getFollows(userId))
+getFollows: userId => dispatch(getFollows(userId)),
+deleteFollow: followId => dispatch(deleteFollow(followId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowPost);
