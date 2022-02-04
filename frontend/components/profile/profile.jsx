@@ -22,6 +22,13 @@ class Profile extends React.Component  {
       follower: this.props.session.id
     }
     this.props.createFollow(follow)
+    e.target.classList.add("hidden")
+  }
+
+  unfollowUser(e) {
+    this.setState({newFollow: false})
+    let follows = Object.values(this.props.entities.follows).filter(follow => follow.follower_id == this.props.session.id)
+    this.props.deleteFollow(follows[0].id)
   }
 
   following(follows, currentUser) {
@@ -62,16 +69,23 @@ class Profile extends React.Component  {
       let followingUser = currentUser || this.following(this.props.entities.follows, this.props.session.id)
       let followCount = Object.keys(this.props.entities.follows).length
       let showEdit = false
-      let displayFollowing = currentUser ? "" : "Following"
 
       return (
         <div className="profile-container">
           <div className='profile-header'>
             <img src='https://pacdn.500px.org/userpic.png'/>
             {
-              followingUser ?
-              <p className='profile-following-text'>{displayFollowing}</p> :
-              <button onClick={e => this.followUser(e)} className='profile-follow-button'>Follow</button>
+              currentUser
+              ?
+              <></>
+              :
+              <div>
+                {
+                  followingUser ?
+                  <button onClick={e => this.unfollowUser(e)} className='profile-follow-button'>Unfollow</button> :
+                  <button onClick={e => this.followUser(e)} className='profile-follow-button'>Follow</button>
+                }
+              </div>
             }
             <h2>{this.props.entities.user.username}</h2>
             <div className='profile-total-stats'>
