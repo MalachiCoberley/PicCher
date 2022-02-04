@@ -47,6 +47,12 @@
     }
   }
 
+  .comment-index {
+    max-height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
   .comment-container {
     display: flex;
     align-items: center;

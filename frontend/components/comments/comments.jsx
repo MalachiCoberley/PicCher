@@ -44,6 +44,7 @@ class Comment extends React.Component {
             <input id="comment-input" type="text" className='add-comment-input' placeholder="Add a comment" onChange={e => this.updateComment(e)}/>
           </form>
           <h4>{Object.keys(comments).length} Comment</h4>
+          <div className='comment-index'>
           {
             Object.values(comments).map(comment => (
             <CommentsIndexItem
@@ -54,6 +55,7 @@ class Comment extends React.Component {
             />
             ))
           }
+          </div>
         </div>
       )
     }

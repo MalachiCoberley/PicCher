@@ -7,11 +7,9 @@ const Navbar = ({ currentUser, logout }) => {
     <nav className="main-nav">
     <div className="left-nav">
       <Link to="/"><h1>PicCher</h1></Link>
-      <p>Discover</p>
-      <p>Licensing</p>
-      <p>Resources</p>
-      <p>Memberships</p>
-      <p>Quests</p>
+      <a className='external-nav-link' href="https://github.com/MalachiCoberley" target="_blank">Github</a>
+      <a className='external-nav-link' href="https://www.linkedin.com/in/malachi-coberley/" target="_blank">Linkedin</a>
+      <a className='external-nav-link' href="http://malachicoberley.com/" target="_blank">Portfolio</a>
     <div className="nav-buttons">
       <div className="search-bar">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,11 +27,10 @@ const Navbar = ({ currentUser, logout }) => {
     <nav className="main-nav">
     <div className="left-nav">
       <Link to="/"><h1>PicCher</h1></Link>
-      <p>Discover</p>
-      <p>Licensing</p>
-      <p>Resources</p>
-      <p>Memberships</p>
-      <p>Quests</p>
+      <a className='external-nav-link' href="https://github.com/MalachiCoberley" target="_blank">Github</a>
+      <a className='external-nav-link' href="https://www.linkedin.com/in/malachi-coberley/" target="_blank">Linkedin</a>
+      <a className='external-nav-link' href="http://malachicoberley.com/" target="_blank">Portfolio</a>
+    </div>
     <div className="nav-buttons">
       <SearchBar/>
       <div className='nav-profile-dropdown'>
@@ -42,9 +39,8 @@ const Navbar = ({ currentUser, logout }) => {
         <Link to={`/user/${currentUser.id}`}>Profile</Link>
         <Link to="#" onClick={logout}>Log Out</Link>
       </div>
-      </div>
-      <Link to="/post/new" className="nav-upload">{`\u21d1`} Upload</Link>
     </div>
+      <Link to="/post/new" className="nav-upload">{`\u21d1`} Upload</Link>
    </div>
   </nav>
   );
