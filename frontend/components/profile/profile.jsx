@@ -22,7 +22,8 @@ class Profile extends React.Component  {
       follower: this.props.session.id
     }
     this.props.createFollow(follow)
-    e.target.classList.add("hidden")
+    this.setState({loadingFollows: true})
+    this.props.getFollows(this.props.match.params.userId).then(() => this.setState({loadingFollows: false}))
   }
 
   unfollowUser(e) {
